@@ -20,10 +20,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowPaperBG" translatesAutoresizingMaskIntoConstraints="NO" id="PBM-9f-L3u">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WEH-ZQ-PrZ">
-                                <rect key="frame" x="100" y="390" width="400" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WEH-ZQ-PrZ">
+                                <rect key="frame" x="100" y="392" width="400" height="120"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXr-Sw-U4O">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXr-Sw-U4O" userLabel="RockBtn">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="hYm-cL-Kx2"/>
@@ -34,7 +34,7 @@
                                             <action selector="onRockPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DTb-dd-nL8"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwY-98-u9r">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwY-98-u9r" userLabel="PaperBtn">
                                         <rect key="frame" x="140" y="0.0" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="HQ5-Yl-wyL"/>
@@ -45,7 +45,7 @@
                                             <action selector="onPaperPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wg1-Ow-RjF"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyD-dI-Y8c">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyD-dI-Y8c" userLabel="ScissorsBtn">
                                         <rect key="frame" x="280" y="0.0" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="VLC-bZ-5Tk"/>
@@ -58,8 +58,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xmd-CU-rIC">
-                                <rect key="frame" x="120" y="119" width="360" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xmd-CU-rIC">
+                                <rect key="frame" x="100" y="116" width="400" height="120"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="rock" translatesAutoresizingMaskIntoConstraints="NO" id="Oqi-TX-Ca3">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -69,14 +69,14 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="paper" translatesAutoresizingMaskIntoConstraints="NO" id="uKO-jh-0qK">
-                                        <rect key="frame" x="120" y="0.0" width="120" height="120"/>
+                                        <rect key="frame" x="140" y="0.0" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="QAP-c5-3Ox"/>
                                             <constraint firstAttribute="height" constant="120" id="VGh-Hm-wDm"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="scissors" translatesAutoresizingMaskIntoConstraints="NO" id="H94-4x-JYm">
-                                        <rect key="frame" x="240" y="0.0" width="120" height="120"/>
+                                        <rect key="frame" x="280" y="0.0" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="K5l-1Z-VxW"/>
                                             <constraint firstAttribute="width" constant="120" id="Y57-8u-wpa"/>
@@ -85,7 +85,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="AO0-tk-Ick">
-                                <rect key="frame" x="170" y="28" width="312" height="35"/>
+                                <rect key="frame" x="144" y="28" width="312" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Wins: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0f-eZ-Tkq">
                                         <rect key="frame" x="0.0" y="0.0" width="83" height="35"/>
@@ -107,15 +107,31 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bB-Uj-qiJ">
+                                <rect key="frame" x="178" y="215" width="245" height="169"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="COM-0j-F45"/>
+                                    <constraint firstAttribute="width" constant="300" id="xqF-Ty-amI"/>
+                                </constraints>
+                                <state key="normal" image="eraser"/>
+                                <connections>
+                                    <action selector="nextRound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AuY-mh-4qV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PBM-9f-L3u" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2IF-GV-jMF"/>
                             <constraint firstItem="Xmd-CU-rIC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Se-uE-fIe"/>
                             <constraint firstAttribute="trailing" secondItem="PBM-9f-L3u" secondAttribute="trailing" id="5jq-Tx-wOa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WEH-ZQ-PrZ" secondAttribute="bottom" constant="100" id="8Rr-g4-2pj"/>
                             <constraint firstItem="PBM-9f-L3u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DuF-wT-gPQ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PBM-9f-L3u" secondAttribute="bottom" id="HWp-e2-V2q"/>
+                            <constraint firstItem="4bB-Uj-qiJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="20" id="Ihe-o8-e76"/>
+                            <constraint firstItem="PBM-9f-L3u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KYV-bB-0NV"/>
                             <constraint firstItem="AO0-tk-Ick" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tcm-S5-h33"/>
+                            <constraint firstItem="PBM-9f-L3u" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="e75-wf-m27"/>
+                            <constraint firstItem="4bB-Uj-qiJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gA8-X4-1lV"/>
                             <constraint firstItem="WEH-ZQ-PrZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wfx-qK-Dxg"/>
                         </constraints>
                     </view>
@@ -123,7 +139,11 @@
                         <outlet property="displayLoses" destination="dqy-75-mh2" id="za9-a8-kkG"/>
                         <outlet property="displayTie" destination="z06-ge-xbT" id="Am7-Sv-VW9"/>
                         <outlet property="displayWins" destination="D0f-eZ-Tkq" id="cAt-EZ-ZOQ"/>
+                        <outlet property="nextRoundBtn" destination="4bB-Uj-qiJ" id="801-MR-hfd"/>
                         <outlet property="paperImg" destination="uKO-jh-0qK" id="nia-rv-sqx"/>
+                        <outlet property="playerPaperBtn" destination="CwY-98-u9r" id="ikv-NK-B98"/>
+                        <outlet property="playerRockBtn" destination="VXr-Sw-U4O" id="xyx-eM-Ab7"/>
+                        <outlet property="playerScissorsBtn" destination="nyD-dI-Y8c" id="TEg-wk-s7h"/>
                         <outlet property="rockImg" destination="Oqi-TX-Ca3" id="X0l-eM-4bj"/>
                         <outlet property="scissorsImg" destination="H94-4x-JYm" id="evr-rV-iRP"/>
                     </connections>
@@ -134,6 +154,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eraser" width="540" height="372"/>
         <image name="paper" width="700" height="700"/>
         <image name="rock" width="700" height="700"/>
         <image name="scissors" width="700" height="700"/>

@@ -10,9 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var displayWins: UILabel!
+    @IBOutlet weak var displayLoses: UILabel!
+    @IBOutlet weak var displayTie: UILabel!
+    @IBOutlet weak var rockImg: UIImageView!
+    @IBOutlet weak var paperImg: UIImageView!
+    @IBOutlet weak var scissorsImg: UIImageView!
+    @IBOutlet weak var nextRoundBtn: UIButton!
+    @IBOutlet weak var playerRockBtn: UIButton!
+    @IBOutlet weak var playerPaperBtn: UIButton!
+    @IBOutlet weak var playerScissorsBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        nextRoundBtn.hidden = true
+        
     }
     
     enum rockPaperScissors: String {
@@ -25,22 +38,12 @@ class ViewController: UIViewController {
     
     var randomNum = arc4random()%3
    
-    var checkForWin = false
+    var checkForWin = true
     var winScore = 0
     var loseScore = 0
     var itsATie = 0
     var playerChoice: rockPaperScissors = rockPaperScissors.None
     var compChoice: rockPaperScissors = rockPaperScissors.None
-    
-    @IBOutlet weak var displayWins: UILabel!
-    @IBOutlet weak var displayLoses: UILabel!
-    @IBOutlet weak var displayTie: UILabel!
-    @IBOutlet weak var rockImg: UIImageView!
-    @IBOutlet weak var paperImg: UIImageView!
-    @IBOutlet weak var scissorsImg: UIImageView!
-    
-   
-    
     
     
     @IBAction func onRockPressed(sender: AnyObject){
@@ -63,6 +66,8 @@ class ViewController: UIViewController {
     
     func determinWinner(win: rockPaperScissors){
         
+        playerChoice = win
+        hideNonselected()
         computerPlayer()
         
         //User wins cases
@@ -80,14 +85,21 @@ class ViewController: UIViewController {
                     playerChoice == rockPaperScissors.Scissors && compChoice == rockPaperScissors.Scissors {
             itsATie += 1
             displayTie.text = "Ties: " + "\(itsATie)"
-        } else {
+            nextRoundBtn.hidden = false
+        } else if playerChoice == rockPaperScissors.Rock && compChoice == rockPaperScissors.Paper {
+            checkForWin = false
+            processWin()
+        } else if playerChoice == rockPaperScissors.Paper && compChoice == rockPaperScissors.Scissors {
+            checkForWin = false
+            processWin()
+        } else if playerChoice == rockPaperScissors.Scissors && compChoice == rockPaperScissors.Rock {
             checkForWin = false
             processWin()
         }
         
     }
     
-    func computerPlayer(){
+    func computerPlayer() {
         
         randomNum = arc4random()%3
         
@@ -105,17 +117,54 @@ class ViewController: UIViewController {
             paperImg.hidden = true
         }
         
+        
     }
     
     func processWin(){
         if checkForWin == true {
             winScore += 1
             displayWins.text = "Wins: " + "\(winScore)"
-            
+            nextRoundBtn.hidden = false
         } else if checkForWin == false {
             loseScore += 1
             displayLoses.text = "Loses: " + "\(loseScore)"
+            nextRoundBtn.hidden = false
         }
+    }
+    
+    @IBAction func nextRound(sender: AnyObject) {
+        
+        onNextRoundPressed()
+        
+    }
+    
+    func onNextRoundPressed(){
+        
+        rockImg.hidden = false
+        paperImg.hidden = false
+        scissorsImg.hidden = false
+        playerRockBtn.hidden = false
+        playerPaperBtn.hidden = false
+        playerScissorsBtn.hidden = false
+        playerChoice = rockPaperScissors.None
+        compChoice = rockPaperScissors.None
+        nextRoundBtn.hidden = true
+        
+    }
+    
+    func hideNonselected(){
+        
+        if playerChoice == rockPaperScissors.Rock {
+            playerPaperBtn.hidden = true
+            playerScissorsBtn.hidden = true
+        } else if playerChoice == rockPaperScissors.Paper {
+            playerRockBtn.hidden = true
+            playerScissorsBtn.hidden = true
+        } else if playerChoice == rockPaperScissors.Scissors {
+            playerRockBtn.hidden = true
+            playerPaperBtn.hidden = true
+        }
+        
     }
 
 
