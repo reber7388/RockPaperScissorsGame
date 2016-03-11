@@ -30,6 +30,9 @@
                                             <constraint firstAttribute="width" constant="120" id="tUt-EW-UVd"/>
                                         </constraints>
                                         <state key="normal" image="rock"/>
+                                        <connections>
+                                            <action selector="onRockPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DTb-dd-nL8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwY-98-u9r">
                                         <rect key="frame" x="140" y="0.0" width="120" height="120"/>
@@ -38,6 +41,9 @@
                                             <constraint firstAttribute="width" constant="120" id="piA-ag-Qlh"/>
                                         </constraints>
                                         <state key="normal" image="paper"/>
+                                        <connections>
+                                            <action selector="onPaperPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wg1-Ow-RjF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyD-dI-Y8c">
                                         <rect key="frame" x="280" y="0.0" width="120" height="120"/>
@@ -46,6 +52,9 @@
                                             <constraint firstAttribute="width" constant="120" id="vdX-fy-dXg"/>
                                         </constraints>
                                         <state key="normal" image="scissors"/>
+                                        <connections>
+                                            <action selector="onScissorsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8HB-XF-iuv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -75,17 +84,23 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AO0-tk-Ick">
-                                <rect key="frame" x="170" y="28" width="97" height="70"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="AO0-tk-Ick">
+                                <rect key="frame" x="170" y="28" width="312" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Wins: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0f-eZ-Tkq">
-                                        <rect key="frame" x="0.0" y="0.0" width="97" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="83" height="35"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                         <color key="textColor" red="0.38768028846153846" green="0.38768028846153846" blue="0.38768028846153846" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Loses: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqy-75-mh2">
-                                        <rect key="frame" x="0.0" y="35" width="97" height="35"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Loses: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqy-75-mh2">
+                                        <rect key="frame" x="113" y="0.0" width="97" height="35"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                        <color key="textColor" red="0.38768028850000003" green="0.38768028850000003" blue="0.38768028850000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Ties: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z06-ge-xbT">
+                                        <rect key="frame" x="240" y="0.0" width="72" height="35"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                         <color key="textColor" red="0.38768028850000003" green="0.38768028850000003" blue="0.38768028850000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -100,12 +115,17 @@
                             <constraint firstAttribute="trailing" secondItem="PBM-9f-L3u" secondAttribute="trailing" id="5jq-Tx-wOa"/>
                             <constraint firstItem="PBM-9f-L3u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DuF-wT-gPQ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PBM-9f-L3u" secondAttribute="bottom" id="HWp-e2-V2q"/>
+                            <constraint firstItem="AO0-tk-Ick" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tcm-S5-h33"/>
                             <constraint firstItem="WEH-ZQ-PrZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wfx-qK-Dxg"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="loses" destination="dqy-75-mh2" id="j1r-CB-nQF"/>
-                        <outlet property="wins" destination="D0f-eZ-Tkq" id="1f0-xd-KZY"/>
+                        <outlet property="displayLoses" destination="dqy-75-mh2" id="za9-a8-kkG"/>
+                        <outlet property="displayTie" destination="z06-ge-xbT" id="Am7-Sv-VW9"/>
+                        <outlet property="displayWins" destination="D0f-eZ-Tkq" id="cAt-EZ-ZOQ"/>
+                        <outlet property="paperImg" destination="uKO-jh-0qK" id="nia-rv-sqx"/>
+                        <outlet property="rockImg" destination="Oqi-TX-Ca3" id="X0l-eM-4bj"/>
+                        <outlet property="scissorsImg" destination="H94-4x-JYm" id="evr-rV-iRP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

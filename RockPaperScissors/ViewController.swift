@@ -35,6 +35,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var displayWins: UILabel!
     @IBOutlet weak var displayLoses: UILabel!
     @IBOutlet weak var displayTie: UILabel!
+    @IBOutlet weak var rockImg: UIImageView!
+    @IBOutlet weak var paperImg: UIImageView!
+    @IBOutlet weak var scissorsImg: UIImageView!
     
    
     
@@ -76,7 +79,7 @@ class ViewController: UIViewController {
                     playerChoice == rockPaperScissors.Paper && compChoice == rockPaperScissors.Paper ||
                     playerChoice == rockPaperScissors.Scissors && compChoice == rockPaperScissors.Scissors {
             itsATie += 1
-            displayTie.text = "\(itsATie)"
+            displayTie.text = "Ties: " + "\(itsATie)"
         } else {
             checkForWin = false
             processWin()
@@ -90,10 +93,16 @@ class ViewController: UIViewController {
         
         if randomNum == 0 {
             compChoice = rockPaperScissors.Rock
+            paperImg.hidden = true
+            scissorsImg.hidden = true
         }else if randomNum == 1 {
             compChoice = rockPaperScissors.Paper
+            rockImg.hidden = true
+            scissorsImg.hidden = true
         }else if randomNum == 2 {
             compChoice = rockPaperScissors.Scissors
+            rockImg.hidden = true
+            paperImg.hidden = true
         }
         
     }
@@ -101,11 +110,11 @@ class ViewController: UIViewController {
     func processWin(){
         if checkForWin == true {
             winScore += 1
-            displayWins.text = "\(winScore)"
+            displayWins.text = "Wins: " + "\(winScore)"
             
         } else if checkForWin == false {
             loseScore += 1
-            displayLoses.text = "\(loseScore)"
+            displayLoses.text = "Loses: " + "\(loseScore)"
         }
     }
 
