@@ -77,6 +77,9 @@ class ViewController: UIViewController {
                     playerChoice == rockPaperScissors.Scissors && compChoice == rockPaperScissors.Scissors {
             itsATie += 1
             displayTie.text = "\(itsATie)"
+        } else {
+            checkForWin = false
+            processWin()
         }
         
     }
